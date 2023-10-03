@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 html {
   block-size: 100%;
 }
@@ -13,7 +23,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -35,4 +45,233 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.page {
+  display: flex;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 133px 30px;
+}
+
+.result {
+  align-self: end;
+}
+
+.result__video-container {
+  margin-bottom: 16px;
+  min-width: 711px;
+  min-height: 386px;
+  position: relative;
+}
+
+.result__video-container video:first-child {
+  width: 100%;
+  height: 100%;
+}
+
+.search-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.search-form__checkbox-list .search-form__label:not(:last-child) {
+  margin-right: 15px;
+}
+
+fieldset {
+  border: none;
+}
+
+.search-form__label {
+  display: inline-flex;
+  width: fit-content;
+  gap: 5px;
+}
+
+input[type="text"] {
+  background-color: transparent !important;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  appearance: none;
+  color: #fff;
+  width: 225px;
+  height: 27px;
+}
+
+input[type="text"]:active {
+  outline: 1px solid #fff;
+  outline-offset: 0px;
+}
+
+input[type="text"]:hover {
+  text-decoration: none;
+  cursor: text;
+}
+
+input[type="text"]:focus {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + span {
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + span:active {
+  background-color: #fff;
+  border: 1px solid transparent;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+input[type="checkbox"]:checked + span::before {
+  content: "";
+  display: block;
+  height: 18px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  outline: 1px solid #fff;
+  outline-offset: 3px;
+}
+
+.search-form__checkbox-list .search-form__label:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  height: 34px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #545050;
+}
+
+button:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__submit-button {
+  min-width: 194px;
+  align-self: end;
+}
+
+.more-button {
+  width: 100%;
+}
+
+.title {
+  padding-bottom: 26px;
+  color: #fff;
+  font-family: Oswald;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.title .content__accent:first-child {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  overflow: scroll;
+  height: 298px;
+}
+
+.content__card-link_current{
+  background-color: #545050;
+}
+
+.content__list-item:active {
+  background-color: #545050;
+}
+
+.content__list-item:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  cursor: pointer;
+}
+
+.content__list-item:has(:focus-visible){
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__list .content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__video-card {
+  display: flex;
+  vertical-align: top;
+}
+
+.content__video-card-description-container {
+  width: 100%;
+}
+
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+}
+
+.content__video-card-thumbnail {
+  max-width: 194px;
+  max-height: 103px;
+}
+
+.preloader-template {
+  position: absolute;
 }
