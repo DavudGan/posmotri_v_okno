@@ -252,6 +252,7 @@ button:focus-visible {
 .content__video-card {
   display: flex;
   vertical-align: top;
+  gap: 5px;
 }
 
 .content__video-card-description-container {
