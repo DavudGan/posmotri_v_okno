@@ -19,6 +19,7 @@ html {
 }
 
 .page {
+  display: flex;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -47,10 +48,6 @@ ol {
   list-style: none;
 }
 
-.page {
-  display: flex;
-}
-
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -59,19 +56,20 @@ ol {
 }
 
 .result {
-  align-self: end;
+  padding-top: 75px;
 }
 
 .result__video-container {
-  margin-bottom: 16px;
   min-width: 711px;
-  min-height: 386px;
+  margin-bottom: 11px;
   position: relative;
 }
 
 .result__video-container video:first-child {
-  width: 100%;
-  height: 100%;
+  width: 710px;
+  height: 386px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -87,7 +85,7 @@ ol {
 }
 
 .search-form__checkbox-list .search-form__label:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 fieldset {
@@ -107,8 +105,14 @@ input[type="text"] {
   border-bottom: 1px solid #fff;
   appearance: none;
   color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
   width: 225px;
   height: 27px;
+}
+
+input[type="text"]::placeholder {
+  font-size: 18px;
 }
 
 input[type="text"]:active {
@@ -167,6 +171,7 @@ button {
   border: 1px solid #fff;
   height: 34px;
   color: #fff;
+  font-size: 18px;
   text-align: center;
   font-weight: 700;
   cursor: pointer;
@@ -200,9 +205,9 @@ button:focus-visible {
 }
 
 .title {
-  padding-bottom: 26px;
+  padding-bottom: 22px;
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   font-weight: 700;
   line-height: 94%;
@@ -253,6 +258,8 @@ button:focus-visible {
   display: flex;
   vertical-align: top;
   gap: 5px;
+  padding: 2px;
+  max-width: 397px;
 }
 
 .content__video-card-description-container {
@@ -260,17 +267,19 @@ button:focus-visible {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
-  padding-bottom: 6px;
+  padding-bottom: 1px;
 }
 
 .content__video-card-thumbnail {
-  max-width: 194px;
+  min-width: 194px;
   max-height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .preloader-template {
